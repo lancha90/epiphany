@@ -22,7 +22,7 @@ First you'll need to include the cache module and specify which caching engine y
 The available methods are `get`, `set` and `delete`.
 
     get($name);
-    set($name, $value[, $ttl]);
+    set($name, $value, $ttl);
     delete($name);
 
 The default value for `$ttl` is 0 which means it will be stored forever. For the Memcached engine the `$ttl` can be seconds from the current time as long as it is less than `60*60*24*30` (seconds in 30 days) otherwise it needs to be a Unix timestamp.
