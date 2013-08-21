@@ -19,6 +19,7 @@ class Epi
     'cache-memcached' => array('base', 'EpiCache.php', 'EpiCache_Memcached.php'),
     'config' => array('base', 'EpiConfig.php'),
     'database' => array('base', 'EpiDatabase.php'),
+    'mongo' => array('EpiMongo.php'),
     'debug' => array('EpiDebug.php'),
     'route'  => array('base', 'EpiRoute.php'),
     'session' => array('base', 'EpiSession.php', 'session-php', 'session-apc', 'session-memcached'),
@@ -31,6 +32,7 @@ class Epi
 
   public static function init()
   {
+
     $args = func_get_args();
     if(!empty($args))
     {
@@ -61,6 +63,7 @@ class Epi
 
   private static function loadDependency($dep)
   {
+
     $value = isset(self::$manifest[$dep]) ? self::$manifest[$dep] : $dep;
     if(!is_array($value))
     {
